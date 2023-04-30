@@ -409,7 +409,7 @@ async function addToNotion(itemData, category) {
     keys.forEach(key => {
       if (itemData[DB_PROPERTIES[key]]) {
         properties[DB_PROPERTIES[key]] = getPropertyValye(itemData[DB_PROPERTIES[key]], PropertyType[key], DB_PROPERTIES[key]);
-        console.log(properties[DB_PROPERTIES[key]]);
+     
       }
     });
 
@@ -438,6 +438,7 @@ async function addToNotion(itemData, category) {
       },
       // fill in properties by the format: https://developers.notion.com/reference/page#page-property-value
       properties,
+      console.log(properties);
     };
 
     if (properties[DB_PROPERTIES.POSTER]) {
