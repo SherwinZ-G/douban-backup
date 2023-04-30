@@ -438,8 +438,10 @@ async function addToNotion(itemData, category) {
       },
       // fill in properties by the format: https://developers.notion.com/reference/page#page-property-value
       properties,
-      console.log(properties);
+      
+      
     };
+    console.log(postData.properties);
 
     if (properties[DB_PROPERTIES.POSTER]) {
       // use poster for the page cover
