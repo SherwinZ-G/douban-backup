@@ -155,7 +155,7 @@ async function handleFeed(feed, category) {
     let itemData;
     try {
       itemData = await fetchItem(link, category);
-      itemData[DB_PROPERTIES.TITLE]=item.title;
+    
       itemData[DB_PROPERTIES.ITEM_LINK] = link;
       itemData[DB_PROPERTIES.RATING] = item.rating;
       itemData[DB_PROPERTIES.RATING_DATE] = dayjs(item.time).format('YYYY-MM-DD');
@@ -409,6 +409,7 @@ async function addToNotion(itemData, category) {
     keys.forEach(key => {
       if (itemData[DB_PROPERTIES[key]]) {
         properties[DB_PROPERTIES[key]] = getPropertyValye(itemData[DB_PROPERTIES[key]], PropertyType[key], DB_PROPERTIES[key]);
+        console.log(properties[DB_PROPERTIES[key]]);
       }
     });
 
